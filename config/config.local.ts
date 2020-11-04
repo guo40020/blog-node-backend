@@ -1,6 +1,15 @@
-import { EggAppConfig, PowerPartial } from 'egg';
+import { EggAppConfig, PowerPartial } from "egg";
 
 export default () => {
-  const config: PowerPartial<EggAppConfig> = {};
+  const config: PowerPartial<EggAppConfig> = {
+    sequelize: {
+      dialect: "mysql",
+      host: "127.0.0.1",
+      port: 3406,
+      database: "blog_dev",
+      username: "root",
+      password: "",
+    },
+  };
   return config;
 };
