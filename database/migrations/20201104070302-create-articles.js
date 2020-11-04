@@ -20,14 +20,17 @@ module.exports = {
       tags: {
         type: Sequelize.STRING,
       },
-      dateTime: {
+      date_time: {
         type: Sequelize.INTEGER,
       },
-      createdAt: {
+      content: {
+        type: Sequelize.STRING
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },

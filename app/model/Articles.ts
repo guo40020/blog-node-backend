@@ -6,6 +6,7 @@ module.exports = (app) => {
     title: STRING,
     description: STRING,
     tags: STRING,
+    content: STRING,
     dateTime: INTEGER,
   });
 
