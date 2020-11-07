@@ -10,6 +10,24 @@ export default (appInfo: EggAppInfo) => {
   // add your egg config in here
   config.middleware = [];
 
+  config.cors = {
+    origin: '*',
+    allowMethods: "GET,POST,OPTION"
+  }
+
+  config.jwt = {
+    secret: "fuckyou"
+  }
+
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: 'fuckpassword',
+      db: 0
+    }
+  }
+
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
