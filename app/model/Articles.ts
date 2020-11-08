@@ -1,6 +1,6 @@
 import { Application } from "egg";
 
-module.exports = (app: Application) => {
+export default (app: Application) => {
   const { STRING, INTEGER } = app.Sequelize;
 
   const Article = app.model.define("articles", {
