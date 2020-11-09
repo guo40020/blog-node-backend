@@ -7,5 +7,6 @@ export default (app: Application) => {
   router.get("/get_all_ids", controller.getAllIds.getIds);
   router.post("/get_post", controller.getPost.getPost);
   router.post("/login", controller.login.login);
-  router.post("/add-post", controller.addPost.addPost);
+  router.post("/add_post", controller.addPost.addPost);
+  router.post("/delete_post", controller.deletePost.deletePost);
 };

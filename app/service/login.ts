@@ -16,7 +16,7 @@ export default class Login extends Service {
     } else {
       const loginId = nanoid(64);
       const expire = moment().add({ days: 7 });
-      app.redis.set(loginId, 1, 'EX', moment.duration(7, 'days').seconds())
+      app.redis.set(loginId, 1, 'EX', moment.duration(7, 'days').asSeconds())
       const token = app.jwt.sign({
         loginId,
         expire
