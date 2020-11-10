@@ -9,4 +9,5 @@ export default (app: Application) => {
   router.post("/login", controller.login.login);
   router.post("/add_post", controller.addPost.addPost);
   router.post("/delete_post", controller.deletePost.deletePost);
+  router.post("/update_post", controller.updatePost.updatePost);
 };
