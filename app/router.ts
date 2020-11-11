@@ -10,4 +10,5 @@ export default (app: Application) => {
   router.post("/add_post", controller.addPost.addPost);
   router.post("/delete_post", controller.deletePost.deletePost);
   router.post("/update_post", controller.updatePost.updatePost);
+  router.post("/upload_image", controller.uploadImage.uploadImage);
 };
