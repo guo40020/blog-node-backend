@@ -13,6 +13,7 @@ class DeletePostController extends Controller {
       return;
     }
     try {
+      console.log(ctx.request.body)
       const result = await <Promise<number>>ctx.service.deletePost.deletePost(ctx.request.body);
       if (result == 1) {
         ctx.response.body = {
@@ -22,6 +23,7 @@ class DeletePostController extends Controller {
         ctx.response.body = {
           success: false,
         }
+        ctx.response.status = 500
       }
 
     } catch (e) {
@@ -29,6 +31,7 @@ class DeletePostController extends Controller {
         success: false,
         message: e.toString(),
       }
+      ctx.response.status = 500
     }
     
   }
