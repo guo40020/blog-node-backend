@@ -9,10 +9,15 @@ class UploadImage extends Service {
     const filename = `${nanoid(30)}.${stream.filename.split('.').pop()}`
     const w = fs.createWriteStream(`./user-content/${filename}`);
     stream.pipe(w);
-    await new Promise((resolve) => {
+    try {
+      await new Promise((resolve, reject) => {
       w.on('finish', resolve)
-    })
-    return filename;
+      w.on('error', reject)
+      })
+    } catch (e) {
+      return { success: false, message: e.toString() }
+    }
+    return { success: true, filename };
   }
 }
 
